@@ -103,6 +103,14 @@ html {
 
 @media (max-width: 900px) {
 
+   .section-title {
+       font-size: 1.5rem;
+   }
+
+   .parrafo-introduccion {
+       font-size: 1.1rem;
+   }
+
     .texto-principal h1{
         font-size: 4vh;
         padding: 1vh;
@@ -342,7 +350,7 @@ html {
     }
 
     .project__description {
-        font-size: 2vh;
+        font-size: 15px;
     }
 
 }
@@ -352,10 +360,6 @@ html {
     #proyectos div {
         grid-template-columns: auto;
     } 
-
-    .project__description {
-        font-size: 2.5vh;
-    }
 
 }
 
