@@ -1,22 +1,10 @@
-function irSeccion(e) {
-    let seccionNueva = e.target.dataset.seccion;
-    console.log(seccionNueva);
-    let elemento = document.getElementById(seccionNueva + "");
-    if(window.innerWidth <= 900) {
-        let alturaRestar = Math.round(window.innerHeight / 10);
-        let posElemento = elemento.offsetTop;
-        window.scrollTo(0, posElemento - alturaRestar);
-    } else {
-        elemento.scrollIntoView(seccionNueva +"");
-    } 
-        
-    
+function toggleMenu(e) {
+    menu.classList.toggle("active");
 }
 
-let barraNavegacion = document.getElementById("navegacion");
-let secciones = document.getElementById("navegacion").children;
-let elementos = document.querySelectorAll(".boton-navegacion");
-
-for(let elem of secciones)
-    elem.addEventListener("click", irSeccion);
+let botonMenu = document.querySelector(".boton-menu");
+let botonCerrar = document.querySelector(".boton-cerrar");
+let menu = document.querySelector(".navegacion");
+botonMenu.addEventListener("click", toggleMenu);
+botonCerrar.addEventListener("click",toggleMenu);
 

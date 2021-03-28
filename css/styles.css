@@ -5,6 +5,31 @@
     box-sizing: border-box;
 } 
 
+.section-title {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    color: rgb(170, 193, 212);
+    margin-bottom: 1rem;
+}
+
+.parrafo-introduccion {
+    font-size: 1.7rem;
+    color: rgb(170, 193, 212);
+    margin-bottom: 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color:rgb(60, 91, 231);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:rgb(95, 207, 207);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -14,8 +39,12 @@ html {
     margin-left: 10%;
 }
 
+.section {
+    width: 100%;
+    padding: 2rem 2rem;
+}
+
 .portada {
-  width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden;
@@ -23,12 +52,11 @@ html {
 }
 
 .lamina-principal {
-  
   color: whitesmoke;
   background-color: rgba(10, 4, 46, 0.7);
   text-align: center;
   position: absolute;
-  z-index: 999;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,32 +64,33 @@ html {
   height: 100%; 
 }
 
+
+
 .main-button {
+    text-align: center;
     font-size: 1.5vw;
     padding: 1.2vw;
     margin-top: 2rem;
-    border: none;
-    background-color: rgb(26, 129, 129);
-    border-radius: 5px;
-    color: white;
-    transition-property: transform;
+    border: 2px solid rgb(93, 224, 17);
+    background-color: rgba(93, 224, 17, 0.1);
+    color: rgb(93, 224, 17);
+    transition-property: box-shadow text-shadow;
     transition-duration: 0.3s;
     cursor: pointer;
 }
 
+.main-button:hover {
+   text-shadow: 0 0 10px rgb(93, 224, 17);
+   box-shadow: 0 0 10px rgb(93, 224, 17), 0 0 10px rgb(93, 224, 17) inset;
+}
+
 .texto-principal {
-    font-family: 'Press Start 2P', cursive;
     animation-name: aparecer;
     animation-duration: 1.5s;
 }
 
-.main-button:hover {
-    transform: scale(1.1);
-}
-
 .texto-principal h1{
-    font-family: 'Press Start 2P', cursive;
-    font-size: 2vw;
+    font-size: 4vw;
     padding: 1vh;
     border-radius: 10px;
     text-transform: uppercase;
@@ -69,9 +98,31 @@ html {
 
 .texto-principal h2 {
     margin-top: 1rem;
-    font-size: 1.5vw;
-    font-family: 'Press Start 2P', cursive;
+    font-size: 3vw;
 }
+
+@media (max-width: 900px) {
+
+    .texto-principal h1{
+        font-size: 4vh;
+        padding: 1vh;
+        border-radius: 10px;
+        text-transform: uppercase;
+    }
+    
+    .texto-principal h2 {
+        margin-top: 1rem;
+        font-size: 3vh;
+    }
+
+    .main-button {
+        font-size: 2.5vh;
+        padding: 1.2vh;
+    }
+
+}
+
+
 
 @keyframes moverDiagonal {
   from {
@@ -94,6 +145,9 @@ html {
     }
 }
 
+/* NAVEGACIÓN ----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------*/
+
 .navegacion {
     display: flex;
     background-color :rgb(12, 4, 49);
@@ -103,15 +157,17 @@ html {
     z-index: 1000;
     width: 10%;
     height: 100vh;
-    
+}
+
+.navegacion.active {
+    margin-left: 0;
 }
 
 .boton-navegacion {
     position: relative;
-    /* height: 25%; */
     background-color :rgb(12, 4, 49);
-    padding: 2rem 0;
-    border: none;
+    padding: 2vw;
+    border-bottom: 2px groove rgb(21, 7, 85);
     text-decoration: none;
     text-align: center;
     display: flex;
@@ -120,21 +176,8 @@ html {
     cursor: pointer;
 }
 
-.boton-navegacion.active .boton-navegacion_borde {
-    width: 100%;
-    
-}
-
-.boton-navegacion.active .boton-navegacion_icono {
-    color: rgb(95, 207, 207);
-}
-
-.boton-navegacion.active .boton-navegacion_descripcion {
-    color: rgb(95, 207, 207);
-}
-
 .boton-navegacion_icono {
-    font-size: 2vw;
+    font-size: 1.5vw;
     width: 100%;
     color: rgb(60, 91, 231);
     transition-property: color;
@@ -150,60 +193,68 @@ html {
     transition-duration: 0.3s;
 }
 
+
 .boton-navegacion:hover {
     background-color:rgb(19, 6, 75);
 }
 
-.boton-navegacion_borde {
-    position: absolute;
-    bottom: 0;
-    width: 0%;
-    background-color: rgb(16, 15, 80);
-    background-image: linear-gradient(to left, rgb(89, 197, 197), rgb(95, 207, 207));
-    transition-property: width;
-    transition-duration: 0.2s;
-    height: 2px;
+.boton-menu {
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
 }
+
+.boton-cerrar {
+    margin-left: auto;
+    color: rgb(60, 91, 231);
+    font-size: 2rem;
+    padding: 1rem;
+    transition: color 0.3s;
+    display: none; 
+    cursor: pointer;  
+}
+
+.boton-cerrar:hover {
+    color:aqua;
+    
+}
+
 
 @media (max-width: 900px) {
 
     .navegacion {
-        width: 100%;
-        height: 10%;
-        top: 0;
-        flex-direction: row;
-    }
-
-    .boton-navegacion {
-        width: 25%;
-    }
-
-    .boton-navegacion_descripcion {
-        font-size: 2vh;
+        width: 60%;
+        margin-left: -60%;
+        transition: margin-left 0.3s;
     }
 
     .boton-navegacion_icono {
-        font-size: 2vh;
+       font-size: 1.5rem;
+    }
+    
+    .boton-navegacion_descripcion {
+      font-size: 1.5rem;
     }
 
+    .boton-menu {
+        display: block;
+    }
+
+    .boton-cerrar, .boton-menu{
+        display: block;
+    }
+  
     #secciones {
         width: 100%;
         margin-left: 0;
-    }
-
-    .texto-principal h1 {
-        font-size: 3vh;
-        line-height: 1.7rem;
-    }
-
-    .texto-principal h2 {
-        font-size: 3vh;
-        line-height: 3rem;
-    }
-
-    .main-button {
-        font-size: 3vh;
-        padding: 1vh;
     }
 
 }
@@ -308,13 +359,7 @@ html {
 
 }
 
-.section-title {
-    font-family: 'Press Start 2P';
-    text-transform: uppercase;
-    font-size: 2vw;
-    padding: 3vw 0;
-    color: white;
-}
+
 
 
 .sobre-mi {
@@ -323,7 +368,6 @@ html {
     grid-template-columns: 60% 40%;
     background-color: rgb(7, 3, 29);
     color:rgb(196, 207, 218);
-    padding: 2rem;
 }
 
 .sobre-mi .section-title {
@@ -355,6 +399,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    color: rgb(170, 193, 212);
 }
 
 .descripcion-personal__titulo {
@@ -368,20 +413,8 @@ html {
 }
 
 .descripcion-personal__boton {
-    font-size: 1.5vw;
-    border: none;
-    padding: 1vw;
-    margin-top: 1rem;
-    background-color:rgb(26, 129, 129);
-    color: whitesmoke;
-    align-self: flex-end;
-    cursor: pointer; 
-    transition: background-color 0.4s, color 0.4s;  
-}
-
-.descripcion-personal__boton:hover {
-   background-color:rgb(196, 207, 218);
-   color: black;
+   width: 30%;
+   margin-left: auto;
 }
 
 @media (max-width: 1200px) {
@@ -434,8 +467,7 @@ html {
     display: flex;
     flex-direction: column;
     background-color: rgb(7, 3, 29);
-    color: white;
-    padding: 3vw;
+    color: rgb(170, 193, 212)
 }
 
 .contacto-parrafo {
@@ -500,6 +532,49 @@ html {
     color:rgb(91, 112, 235)
 }
 
+footer {
+    background-color: rgb(12, 4, 49);
+    color: rgb(60, 91, 231);
+    padding: 1rem 0;
+}
+
+.footer-title {
+    text-align: center;
+    font-size: 1.5vw;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    margin: auto;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color:rgb(60, 91, 231);
+    font-size: 2vw;
+}
+
+@media (max-width: 900px) {
+
+    .form {
+        width: 100%;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .form-label {
+        font-size: 2.5vh;
+    }
+
+    .form-input {
+        font-size: 2vh;
+    }
+}
 
 
 
