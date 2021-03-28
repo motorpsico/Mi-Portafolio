@@ -5,6 +5,10 @@
     box-sizing: border-box;
 } 
 
+html {
+    font-size: 16px;
+}
+
 .section-title {
     text-transform: uppercase;
     font-size: 2.5rem;
@@ -90,7 +94,7 @@ html {
 }
 
 .texto-principal h1{
-    font-size: 4vw;
+    font-size: 3vw;
     padding: 1vh;
     border-radius: 10px;
     text-transform: uppercase;
@@ -103,12 +107,16 @@ html {
 
 @media (max-width: 900px) {
 
+    html {
+        font-size: 12px;
+    }
+
    .section-title {
-       font-size: 1.5rem;
+       font-size: 2rem;
    }
 
    .parrafo-introduccion {
-       font-size: 1.1rem;
+       font-size: 1.2rem;
    }
 
     .texto-principal h1{
@@ -124,8 +132,8 @@ html {
     }
 
     .main-button {
-        font-size: 2.5vh;
-        padding: 1.2vh;
+        font-size: 1.4rem;
+        padding: 1rem;
     }
 
 }
@@ -350,7 +358,7 @@ html {
     }
 
     .project__description {
-        font-size: 15px;
+        font-size: 1rem;
     }
 
 }
@@ -359,11 +367,16 @@ html {
 
     #proyectos div {
         grid-template-columns: auto;
+        grid-gap: 15px;
     } 
+
+    .project__description {
+        font-size: 12px;
+    }
 
 }
 
-
+/* About -------------------------------------------------- */
 
 
 .sobre-mi {
@@ -425,14 +438,19 @@ html {
     .sobre-mi {
         grid-template-columns: 50% 50%;
     }
+
+    .descripcion-personal__titulo {
+        font-size: 1.5rem;
+    }
+    
+    .descripcion-personal__parrafo {
+        font-size: 1.2rem;
+        
+    }
 }
 
 @media (max-width: 900px) {
 
-    .section-title {
-        font-size: 3vh;
-        text-align: center;
-    }
 
     .sobre-mi {
         grid-template-columns: 100%;
@@ -445,18 +463,6 @@ html {
 
     .descripcion-personal {
         grid-row: 2 / 3;
-    }
-
-    .descripcion-personal__titulo {
-        font-size: 3vh;
-    }
-
-    .descripcion-personal__parrafo {
-        font-size: 2vh;
-    }
-
-    .descripcion-personal__boton {
-        font-size: 2vh;
     }
 
     .tarjeta {
@@ -472,11 +478,6 @@ html {
     flex-direction: column;
     background-color: rgb(7, 3, 29);
     color: rgb(170, 193, 212)
-}
-
-.contacto-parrafo {
-    font-size: 1.5vw;
-
 }
 
 .form {
@@ -544,7 +545,7 @@ footer {
 
 .footer-title {
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -558,10 +559,14 @@ footer {
 .social-icons a {
     text-decoration: none;
     color:rgb(60, 91, 231);
-    font-size: 2vw;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 900px) {
+
+    .form-title {
+        font-size: 2rem;
+    }
 
     .form {
         width: 100%;
@@ -569,14 +574,15 @@ footer {
 
     .form-group {
         width: 100%;
+        margin: 1rem 0;
     }
 
     .form-label {
-        font-size: 2.5vh;
+        font-size: 1.5rem;
     }
 
     .form-input {
-        font-size: 2vh;
+        font-size: 1.2rem;
     }
 }
 
