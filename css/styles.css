@@ -71,6 +71,7 @@ html {
 
 
 .main-button {
+    display: inline-block;
     text-align: center;
     font-size: 1.5vw;
     padding: 1.2vw;
@@ -81,11 +82,16 @@ html {
     transition-property: box-shadow text-shadow;
     transition-duration: 0.3s;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .main-button:hover {
    text-shadow: 0 0 10px rgb(93, 224, 17);
    box-shadow: 0 0 10px rgb(93, 224, 17), 0 0 10px rgb(93, 224, 17) inset;
+}
+
+.main-button:focus {
+    outline: none;
 }
 
 .texto-principal {
@@ -430,7 +436,6 @@ html {
 }
 
 .descripcion-personal__boton {
-   width: 30%;
    margin-left: auto;
 }
 
@@ -508,6 +513,8 @@ html {
 
 .form-group:nth-child(6) textarea {
     height: 15vh;
+    resize: vertical;
+    overflow: auto;
 }
 
 .form-label {
@@ -559,7 +566,12 @@ footer {
 .social-icons a {
     text-decoration: none;
     color:rgb(60, 91, 231);
-    font-size: 1.5rem;
+    font-size: 3rem;
+    transition: color 0.3s; 
+}
+
+.social-icons a:hover {
+    color: aqua;
 }
 
 @media (max-width: 900px) {
@@ -583,6 +595,16 @@ footer {
 
     .form-input {
         font-size: 1.2rem;
+    }
+
+    .form-group:last-child {
+        width: 100%;
+        margin-left: auto;
+    }
+
+    .social-icons  {
+        width: 100%;
+        justify-content: space-around;
     }
 }
 

@@ -39,7 +39,7 @@
         <div class="texto-principal">
           <h1>Guillermo Alejandro Larroca Martinez</h1>
           <h2>Desarrollador Web</h2>
-          <button class="main-button" href="#proyectos">Mirá mis proyectos</button>
+          <a class="main-button" href="#proyectos">Mirá mis proyectos</a>
         </div>
       </div>
     </section>
@@ -137,7 +137,7 @@
         </p>
         <p class="descripcion-personal__parrafo">En mis ratos libres me gusta leer, ejercitarme físicamente, relajarme con música o alguna serie.</p>
         <p class="descripcion-personal__parrafo">Si hay algo en lo que te pueda ayudar o simplemente querés conocerme, no dudes en enviarme un mensaje</p>
-        <a class="descripcion-personal__boton main-button">Contacto</a>
+        <a href="#contacto" class="descripcion-personal__boton main-button">Contacto</a>
       </div>
     </section>
     <section id="contacto" class="section">
@@ -147,21 +147,21 @@
         tu duda te responderé a la brevedad.
       </p>
 
-      <form class="form">
+      <form class="form" action="https://formsubmit.co/de.saturno.a.la.tierra@gmail.com" method="POST">
         <h3 class="form-title">Tu mensaje</h3>
         
         <div class="form-group">
-          <label class="form-label" for="name">Nombre</label>
-          <input class="form-input" type="text" name="name" id="name" placeholder="John Doe" />
+          <label class="form-label" for="name">Nombre*</label>
+          <input class="form-input" required="required" type="text" name="name" id="name" placeholder="John Doe" />
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="email">Email</label>
-          <input class="form-input" type="email" name="email" id="email" placeholder="example@youremail.com" />
+          <label class="form-label" for="email">Email*</label>
+          <input class="form-input" required="required" type="email" name="email" id="email" placeholder="example@youremail.com" />
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="tel">Télefono*</label>
+          <label class="form-label" for="tel">Télefono</label>
           <input class="form-input" type="text" name="tel" id="tel" placeholder="+54 15 1111 1111" />
         </div>
 
@@ -172,7 +172,7 @@
 
         <div class="form-group">
           <label class="form-label" for="comments">Comentario</label>
-          <textarea class="form-input" placeholder="Tu consulta"></textarea>
+          <textarea class="form-input" required="required" placeholder="Tu consulta"></textarea>
         </div>
 
         <div class="form-group">
@@ -185,9 +185,9 @@
     <footer>
       <h3 class="footer-title">Mis redes</h3>
       <div class="social-icons">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-free-code-camp"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/motorpsico"><i class="fab fa-github"></i></a>
+        <a href="https://www.freecodecamp.org/galm"><i class="fab fa-free-code-camp"></i></a>
+        <a href="https://www.linkedin.com/in/guillermo-larroca-mart%C3%ADnez-8a666682/"><i class="fab fa-linkedin"></i></a>
       </div>
     </footer>
  </section>
